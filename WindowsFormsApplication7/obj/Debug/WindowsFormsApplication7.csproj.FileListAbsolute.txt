@@ -1,0 +1,9 @@
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\bin\Debug\WindowsFormsApplication7.exe.config
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\bin\Debug\WindowsFormsApplication7.exe
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\bin\Debug\WindowsFormsApplication7.pdb
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.csprojResolveAssemblyReference.cache
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.Form1.resources
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.Properties.Resources.resources
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.csproj.GenerateResource.Cache
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.exe
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.pdb

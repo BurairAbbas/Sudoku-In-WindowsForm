@@ -1,0 +1,10 @@
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\bin\Release\WindowsFormsApplication7.exe.config
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\bin\Release\WindowsFormsApplication7.exe
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\bin\Release\WindowsFormsApplication7.pdb
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Release\WindowsFormsApplication7.Form1.resources
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Release\WindowsFormsApplication7.Properties.Resources.resources
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Release\WindowsFormsApplication7.csproj.GenerateResource.Cache
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Release\WindowsFormsApplication7.exe
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Release\WindowsFormsApplication7.pdb
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Release\WindowsFormsApplication7.csproj.CoreCompileInputs.cache
+F:\PL Work\Uni\programming\Aamyprogramming\pending work\sudoku\WindowsFormsApplication7\obj\Release\WindowsFormsApplication7.csprojAssemblyReference.cache
