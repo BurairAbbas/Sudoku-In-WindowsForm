@@ -343,7 +343,7 @@ namespace WindowsFormsApplication7
             }
             else 
             {
-                lblMsg.Text = "Fill all box";
+                lblMsg.Text = "Please fill all the box.";
             }
         }
 
