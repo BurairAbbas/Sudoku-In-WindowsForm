@@ -14,7 +14,7 @@ namespace WindowsFormsApplication7
     public partial class Form1 : Form
     {
         // selbox is a varaible of Textbox which value is 'null'
-        TextBox selbox = null;         
+        TextBox selbox = null;
         TextBox arrayseltb;
 
         public Form1()
@@ -46,7 +46,7 @@ namespace WindowsFormsApplication7
             textboxValue[3, 2] = B15;
             textboxValue[3, 3] = B16;
         }
-        
+
 
         private void ValidateTextBox()
         {
@@ -130,7 +130,7 @@ namespace WindowsFormsApplication7
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!IsTextBoxInReadOnlyMode())
+            if (!selbox.ReadOnly)
             {
                 // clear the value in selective box, so it will not overwrite any value;
                 selbox.Clear();
@@ -141,7 +141,7 @@ namespace WindowsFormsApplication7
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!IsTextBoxInReadOnlyMode())
+            if (!selbox.ReadOnly)
             {
                 selbox.Clear();
                 selbox.SelectedText = "2";
@@ -150,7 +150,7 @@ namespace WindowsFormsApplication7
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if (!IsTextBoxInReadOnlyMode())
+            if (!selbox.ReadOnly)
             {
                 selbox.Clear();
                 selbox.SelectedText = "3";
@@ -159,19 +159,13 @@ namespace WindowsFormsApplication7
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            if (!IsTextBoxInReadOnlyMode())
+            if (!selbox.ReadOnly)
             {
                 selbox.Clear();
                 selbox.SelectedText = "4";
                 CheckLogic();
             }
-        }
-        private bool IsTextBoxInReadOnlyMode()
-        {
-            if (selbox.ReadOnly == true)
-                return true;
-            return false;
-        }
+        }        
         private void CheckLogic()
         {
             if (IsSudokuLogicCorrect())
@@ -211,7 +205,7 @@ namespace WindowsFormsApplication7
                     }
                 }
                 // Find the selectedtb than doesn't waste time check another row.
-                if (row != -1 && column != -1)  
+                if (row != -1 && column != -1)
                     break;
             }
         }
@@ -219,7 +213,7 @@ namespace WindowsFormsApplication7
 
         private void NextLevelbtn_Click(object sender, EventArgs e)
         {
-            if (IsTextboxFilled())
+            if (!IsTextboxFilled())
             {
                 if (NextLevelbtn.Text == "Quit")
                 {
@@ -240,14 +234,14 @@ namespace WindowsFormsApplication7
                 else if (Round.Text == "Last Round")
                 {
                     NextLevelbtn.Text = "Quit";
-                }                
+                }
             }
             else
             {
                 lblMsg.Visible = true;
                 lblMsg.Text = "Please complete this level";
             }
-        }       
+        }
         private void DisplayFirstLevel()
         {
             //Readonly prevent user to write or remove data from textbox
@@ -358,11 +352,9 @@ namespace WindowsFormsApplication7
                 {
                     TextBox textBox = c as TextBox;
                     if (textBox.Text == string.Empty)
-                    {
-                        // Text box is empty.
-                        // You COULD store information about this textbox is it's tag.
+                    {                        
                         return false;
-                    }                    
+                    }
                 }
             }
             return true;
@@ -406,7 +398,7 @@ namespace WindowsFormsApplication7
                     }
                 }
             }
-        }       
+        }
         private bool IsTextBoxValueCorrect(int row, int column)
         {
             if (correctValue[row, column] == int.Parse(textboxValue[row, column].Text))
@@ -414,6 +406,6 @@ namespace WindowsFormsApplication7
             return false;
         }
 
-        
+
     }
 }
