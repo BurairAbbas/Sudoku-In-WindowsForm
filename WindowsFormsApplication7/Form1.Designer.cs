@@ -51,7 +51,7 @@
             this.Round = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.highscore = new System.Windows.Forms.Label();
-            this.submit = new System.Windows.Forms.Button();
+            this.Checkbtn = new System.Windows.Forms.Button();
             this.lblMsg = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -243,16 +243,16 @@
             this.highscore.TabIndex = 23;
             this.highscore.Text = "High Scores";
             // 
-            // submit
+            // Checkbtn
             // 
-            this.submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submit.Location = new System.Drawing.Point(24, 262);
-            this.submit.Name = "submit";
-            this.submit.Size = new System.Drawing.Size(111, 43);
-            this.submit.TabIndex = 22;
-            this.submit.Text = "Check";
-            this.submit.UseVisualStyleBackColor = true;
-            this.submit.Click += new System.EventHandler(this.submit_Click);
+            this.Checkbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Checkbtn.Location = new System.Drawing.Point(24, 262);
+            this.Checkbtn.Name = "Checkbtn";
+            this.Checkbtn.Size = new System.Drawing.Size(111, 43);
+            this.Checkbtn.TabIndex = 22;
+            this.Checkbtn.Text = "Check";
+            this.Checkbtn.UseVisualStyleBackColor = true;
+            this.Checkbtn.Click += new System.EventHandler(this.Checkbtn_Click);
             // 
             // lblMsg
             // 
@@ -269,7 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 383);
             this.Controls.Add(this.lblMsg);
-            this.Controls.Add(this.submit);
+            this.Controls.Add(this.Checkbtn);
             this.Controls.Add(this.highscore);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Round);
@@ -326,7 +326,7 @@
         private System.Windows.Forms.Label Round;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label highscore;
-        private System.Windows.Forms.Button submit;
+        private System.Windows.Forms.Button Checkbtn;
         private System.Windows.Forms.Label lblMsg;
     }
 }

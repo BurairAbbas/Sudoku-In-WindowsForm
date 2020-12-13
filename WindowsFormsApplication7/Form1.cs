@@ -26,7 +26,7 @@ namespace WindowsFormsApplication7
 
         TextBox[,] textboxValue;
 
-        void AssignTextBoxToArray()
+        private void AssignTextBoxToArray()
         {
             textboxValue = new TextBox[4, 4];
             textboxValue[0, 0] = B1;
@@ -47,7 +47,7 @@ namespace WindowsFormsApplication7
             textboxValue[3, 3] = B16;
         }
 
-        void ValidateTextBox()
+        private void ValidateTextBox()
         {
             ChangeTextBox_TextFromButton();
             MaximumLengthInTextBox(1);
@@ -250,7 +250,7 @@ namespace WindowsFormsApplication7
             }
         }
 
-        void DisplayFirstLevel()
+        private void DisplayFirstLevel()
         {
             //Readonly prevent user to write or remove data from textbox
             B1.Text = "1";
@@ -279,7 +279,7 @@ namespace WindowsFormsApplication7
 
         }
 
-        void DisplaySecondLevel()
+        private void DisplaySecondLevel()
         {
             B2.Clear();
             B8.Clear();
@@ -308,7 +308,7 @@ namespace WindowsFormsApplication7
             B14.ReadOnly = true;
         }
 
-        void DisplayThirdLevel()
+        private void DisplayThirdLevel()
         {
             B2.Clear();
 
@@ -341,19 +341,18 @@ namespace WindowsFormsApplication7
 
         }
 
-        private void submit_Click(object sender, EventArgs e)
+        private void Checkbtn_Click(object sender, EventArgs e)
         {
             if (IsTextboxFilled())
             {
                 lblMsg.Visible = false;
                 CheckCorrectValuesInTextBox();
             }
-            else 
+            else
             {
-                lblMsg.Text = "Please fill all the box.";
+                lblMsg.Text = "Please fill all the box";
             }
         }
-
         bool IsTextboxFilled()
         {
             foreach (Control c in this.Controls)
@@ -393,7 +392,7 @@ namespace WindowsFormsApplication7
             correctValue[3, 2] = 4;
             correctValue[3, 3] = 3;
         }
-        void CheckCorrectValuesInTextBox()
+        private void CheckCorrectValuesInTextBox()
         {
             CorrectValue();
             for (int i = 0; i < 4; i++)
@@ -418,5 +417,6 @@ namespace WindowsFormsApplication7
             return false;
         }
 
+       
     }
 }
