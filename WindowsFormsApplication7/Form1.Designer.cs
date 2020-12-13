@@ -259,9 +259,10 @@
             this.lblMsg.AutoSize = true;
             this.lblMsg.Location = new System.Drawing.Point(24, 327);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(46, 17);
+            this.lblMsg.Size = new System.Drawing.Size(55, 17);
             this.lblMsg.TabIndex = 24;
-            this.lblMsg.Text = "label1";
+            this.lblMsg.Text = "Label 1";
+            this.lblMsg.Visible = false;
             // 
             // Form1
             // 

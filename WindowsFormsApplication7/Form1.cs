@@ -246,6 +246,7 @@ namespace WindowsFormsApplication7
             }
             else 
             {
+                lblMsg.Visible = true;
                 lblMsg.Text = "Please complete this level";
             }
         }
@@ -341,15 +342,16 @@ namespace WindowsFormsApplication7
 
         }
 
+
         private void Checkbtn_Click(object sender, EventArgs e)
         {
             if (IsTextboxFilled())
             {
-                lblMsg.Visible = false;
                 CheckCorrectValuesInTextBox();
             }
             else
             {
+                lblMsg.Visible = true;
                 lblMsg.Text = "Please fill all the box";
             }
         }
@@ -372,7 +374,7 @@ namespace WindowsFormsApplication7
         }
 
         int[,] correctValue;
-        private void CorrectValue()
+        private void CorrectValues()
         {
             correctValue = new int[4, 4];
             correctValue[0, 0] = 1;
@@ -394,12 +396,12 @@ namespace WindowsFormsApplication7
         }
         private void CheckCorrectValuesInTextBox()
         {
-            CorrectValue();
+            CorrectValues();
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    if (IsTextBoxValueCorrect(i, j) && string.IsNullOrWhiteSpace(textboxValue[i,j].Text))
+                    if (IsTextBoxValueCorrect(i, j))
                     {
                         textboxValue[i, j].ForeColor = Color.Green;
                     }
@@ -415,8 +417,6 @@ namespace WindowsFormsApplication7
             if (correctValue[row, column] == int.Parse(textboxValue[row, column].Text))
                 return true;
             return false;
-        }
-
-       
+        }       
     }
 }
