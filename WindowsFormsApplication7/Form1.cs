@@ -13,7 +13,8 @@ namespace WindowsFormsApplication7
 {
     public partial class Form1 : Form
     {
-        TextBox selbox = null;         // selbox is a varaible of Textbox which value is 'null'
+        // selbox is a varaible of Textbox which value is 'null'
+        TextBox selbox = null;         
         TextBox arrayseltb;
 
         public Form1()
@@ -25,7 +26,6 @@ namespace WindowsFormsApplication7
         }
 
         TextBox[,] textboxValue;
-
         private void AssignTextBoxToArray()
         {
             textboxValue = new TextBox[4, 4];
@@ -46,6 +46,7 @@ namespace WindowsFormsApplication7
             textboxValue[3, 2] = B15;
             textboxValue[3, 3] = B16;
         }
+        
 
         private void ValidateTextBox()
         {
@@ -53,6 +54,26 @@ namespace WindowsFormsApplication7
             MaximumLengthInTextBox(1);
             AcceptNumberOnly();
         }
+        private void MaximumLengthInTextBox(int length)
+        {
+            B1.MaxLength = length;
+            B2.MaxLength = length;
+            B3.MaxLength = length;
+            B4.MaxLength = length;
+            B5.MaxLength = length;
+            B6.MaxLength = length;
+            B7.MaxLength = length;
+            B8.MaxLength = length;
+            B9.MaxLength = length;
+            B10.MaxLength = length;
+            B11.MaxLength = length;
+            B12.MaxLength = length;
+            B13.MaxLength = length;
+            B14.MaxLength = length;
+            B15.MaxLength = length;
+            B16.MaxLength = length;
+        }
+
 
         private void ChangeTextBox_TextFromButton()
         {
@@ -75,51 +96,12 @@ namespace WindowsFormsApplication7
             B16.Enter += tb_Enter;
 
         }
-
         private void tb_Enter(object sender, EventArgs e)
         {
             selbox = (TextBox)sender;    // allowing to select textbox and pass input from button
             arrayseltb = (TextBox)sender;            
         }
 
-        private void GetRowAndColumnOfSelectedTextBox(ref int row, ref int column, TextBox selectedTextbox)
-        {
-            for (int i = 0; i < textboxValue.GetLength(0); i++)
-            {
-                for (int j = 0; j < textboxValue.GetLength(1); j++)
-                {
-                    if (selectedTextbox == textboxValue[i, j])
-                    {
-                        row = i;
-                        column = j;
-                        break;
-                    }
-                }
-                if (row != -1 && column != -1)
-                    break;
-
-            }
-        }
-
-        private void MaximumLengthInTextBox(int length)
-        {
-            B1.MaxLength = length;
-            B2.MaxLength = length;
-            B3.MaxLength = length;
-            B4.MaxLength = length;
-            B5.MaxLength = length;
-            B6.MaxLength = length;
-            B7.MaxLength = length;
-            B8.MaxLength = length;
-            B9.MaxLength = length;
-            B10.MaxLength = length;
-            B11.MaxLength = length;
-            B12.MaxLength = length;
-            B13.MaxLength = length;
-            B14.MaxLength = length;
-            B15.MaxLength = length;
-            B16.MaxLength = length;
-        }
 
         private void AcceptNumberOnly()
         {
@@ -140,18 +122,11 @@ namespace WindowsFormsApplication7
             B15.KeyPress += tb_KeyPress;
             B16.KeyPress += tb_KeyPress;
         }
-
         private void tb_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private bool IsTextBoxInReadOnlyMode()
-        {
-            if (selbox.ReadOnly == true)
-                return true;
-            return false;
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -164,7 +139,39 @@ namespace WindowsFormsApplication7
                 CheckLogic();
             }
         }
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!IsTextBoxInReadOnlyMode())
+            {
+                selbox.Clear();
+                selbox.SelectedText = "2";
+                CheckLogic();
+            }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!IsTextBoxInReadOnlyMode())
+            {
+                selbox.Clear();
+                selbox.SelectedText = "3";
+                CheckLogic();
+            }
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (!IsTextBoxInReadOnlyMode())
+            {
+                selbox.Clear();
+                selbox.SelectedText = "4";
+                CheckLogic();
+            }
+        }
+        private bool IsTextBoxInReadOnlyMode()
+        {
+            if (selbox.ReadOnly == true)
+                return true;
+            return false;
+        }
         private void CheckLogic()
         {
             if (IsSudokuLogicCorrect())
@@ -176,7 +183,6 @@ namespace WindowsFormsApplication7
                 selbox.ForeColor = Color.Red;
             }
         }
-
         private bool IsSudokuLogicCorrect()
         {
             if (!string.IsNullOrWhiteSpace(selbox.Text))
@@ -187,45 +193,33 @@ namespace WindowsFormsApplication7
                 GetRowAndColumnOfSelectedTextBox(ref row, ref column, selbox);
 
                 bool result = Sudoku.IsAnswerValid(row, column, int.Parse(selbox.Text), textboxValue);
-
                 return result;
             }
             return false;
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void GetRowAndColumnOfSelectedTextBox(ref int row, ref int column, TextBox selectedTextbox)
         {
-            if (!IsTextBoxInReadOnlyMode())
+            for (int i = 0; i < textboxValue.GetLength(0); i++)
             {
-                selbox.Clear();
-                selbox.SelectedText = "2";
-                CheckLogic();
+                for (int j = 0; j < textboxValue.GetLength(1); j++)
+                {
+                    if (selectedTextbox == textboxValue[i, j])
+                    {
+                        row = i;
+                        column = j;
+                        break;
+                    }
+                }
+                // Find the selectedtb than doesn't waste time check another row.
+                if (row != -1 && column != -1)  
+                    break;
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (!IsTextBoxInReadOnlyMode())
-            {
-                selbox.Clear();
-                selbox.SelectedText = "3";
-                CheckLogic();
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (!IsTextBoxInReadOnlyMode())
-            {
-                selbox.Clear();
-                selbox.SelectedText = "4";
-                CheckLogic();
-            }
-        }
 
         private void NextLevelbtn_Click(object sender, EventArgs e)
         {
-            if (!IsTextboxFilled())
+            if (IsTextboxFilled())
             {
                 if (NextLevelbtn.Text == "Quit")
                 {
@@ -253,9 +247,7 @@ namespace WindowsFormsApplication7
                 lblMsg.Visible = true;
                 lblMsg.Text = "Please complete this level";
             }
-        }
-        
-
+        }       
         private void DisplayFirstLevel()
         {
             //Readonly prevent user to write or remove data from textbox
@@ -284,7 +276,6 @@ namespace WindowsFormsApplication7
             B16.ReadOnly = true;
 
         }
-
         private void DisplaySecondLevel()
         {
             B2.Clear();
@@ -313,7 +304,6 @@ namespace WindowsFormsApplication7
             B14.Text = "1";
             B14.ReadOnly = true;
         }
-
         private void DisplayThirdLevel()
         {
             B2.Clear();
@@ -346,6 +336,7 @@ namespace WindowsFormsApplication7
             B12.ReadOnly = true;
 
         }
+
 
         private void Checkbtn_Click(object sender, EventArgs e)
         {
