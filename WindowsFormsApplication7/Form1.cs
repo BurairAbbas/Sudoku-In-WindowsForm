@@ -225,21 +225,28 @@ namespace WindowsFormsApplication7
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (Round.Text == "Round 1")
+            if (IsTextboxFilled())
             {
-                DisplaySecondLevel();
-                Round.Text = "Round 2";
-                highscore.Text = "High Score 100";
+                if (Round.Text == "Round 1")
+                {
+                    DisplaySecondLevel();
+                    Round.Text = "Round 2";
+                    highscore.Text = "High Score 100";
+                }
+                else if (Round.Text == "Round 2")
+                {
+                    DisplayThirdLevel();
+                    Round.Text = "Last Round";
+                    highscore.Text = "High Scores 200";
+                }
+                if (Round.Text == "Last Round")
+                {
+                    button1.Text = "Quit";
+                }
             }
-            else if (Round.Text == "Round 2")
+            else 
             {
-                DisplayThirdLevel();
-                Round.Text = "Last Round";
-                highscore.Text = "High Scores 200";
-            }
-            if (Round.Text == "Last Round")
-            {
-                button1.Text = "Quit";
+                lblMsg.Text = "Please complete this level";
             }
         }
 
@@ -336,7 +343,7 @@ namespace WindowsFormsApplication7
 
         private void submit_Click(object sender, EventArgs e)
         {
-            if (IsTextboxEmpty())
+            if (IsTextboxFilled())
             {
                 lblMsg.Visible = false;
                 CheckCorrectValuesInTextBox();
@@ -347,7 +354,7 @@ namespace WindowsFormsApplication7
             }
         }
 
-        bool IsTextboxEmpty()
+        bool IsTextboxFilled()
         {
             foreach (Control c in this.Controls)
             {
@@ -410,7 +417,6 @@ namespace WindowsFormsApplication7
                 return true;
             return false;
         }
-
 
     }
 }
