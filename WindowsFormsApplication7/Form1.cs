@@ -223,11 +223,15 @@ namespace WindowsFormsApplication7
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void NextLevelbtn_Click(object sender, EventArgs e)
         {
-            if (IsTextboxFilled())
+            if (!IsTextboxFilled())
             {
-                if (Round.Text == "Round 1")
+                if (NextLevelbtn.Text == "Quit")
+                {
+                    Application.Exit();
+                }
+                else if (Round.Text == "Round 1")
                 {
                     DisplaySecondLevel();
                     Round.Text = "Round 2";
@@ -239,17 +243,18 @@ namespace WindowsFormsApplication7
                     Round.Text = "Last Round";
                     highscore.Text = "High Scores 200";
                 }
-                if (Round.Text == "Last Round")
+                else if (Round.Text == "Last Round")
                 {
-                    button1.Text = "Quit";
-                }
+                    NextLevelbtn.Text = "Quit";
+                }                
             }
-            else 
+            else
             {
                 lblMsg.Visible = true;
                 lblMsg.Text = "Please complete this level";
             }
         }
+        
 
         private void DisplayFirstLevel()
         {
@@ -342,7 +347,6 @@ namespace WindowsFormsApplication7
 
         }
 
-
         private void Checkbtn_Click(object sender, EventArgs e)
         {
             if (IsTextboxFilled())
@@ -417,6 +421,8 @@ namespace WindowsFormsApplication7
             if (correctValue[row, column] == int.Parse(textboxValue[row, column].Text))
                 return true;
             return false;
-        }       
+        }
+
+        
     }
 }

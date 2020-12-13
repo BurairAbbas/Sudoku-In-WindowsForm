@@ -49,7 +49,7 @@
             this.CB3 = new System.Windows.Forms.Button();
             this.CB4 = new System.Windows.Forms.Button();
             this.Round = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.NextLevelbtn = new System.Windows.Forms.Button();
             this.highscore = new System.Windows.Forms.Label();
             this.Checkbtn = new System.Windows.Forms.Button();
             this.lblMsg = new System.Windows.Forms.Label();
@@ -220,16 +220,16 @@
             this.Round.TabIndex = 20;
             this.Round.Text = "Round 1";
             // 
-            // button1
+            // NextLevelbtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(24, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 40);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Next Level";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.NextLevelbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NextLevelbtn.Location = new System.Drawing.Point(24, 192);
+            this.NextLevelbtn.Name = "NextLevelbtn";
+            this.NextLevelbtn.Size = new System.Drawing.Size(111, 40);
+            this.NextLevelbtn.TabIndex = 22;
+            this.NextLevelbtn.Text = "Next Level";
+            this.NextLevelbtn.UseVisualStyleBackColor = true;
+            this.NextLevelbtn.Click += new System.EventHandler(this.NextLevelbtn_Click);
             // 
             // highscore
             // 
@@ -272,7 +272,7 @@
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.Checkbtn);
             this.Controls.Add(this.highscore);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.NextLevelbtn);
             this.Controls.Add(this.Round);
             this.Controls.Add(this.CB4);
             this.Controls.Add(this.CB3);
@@ -325,7 +325,7 @@
         private System.Windows.Forms.Button CB3;
         private System.Windows.Forms.Button CB4;
         private System.Windows.Forms.Label Round;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button NextLevelbtn;
         private System.Windows.Forms.Label highscore;
         private System.Windows.Forms.Button Checkbtn;
         private System.Windows.Forms.Label lblMsg;
