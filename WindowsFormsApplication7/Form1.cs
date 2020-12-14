@@ -213,7 +213,7 @@ namespace WindowsFormsApplication7
 
         private void NextLevelbtn_Click(object sender, EventArgs e)
         {
-            if (!IsTextboxFilled())
+            if (IsTextboxFilled())
             {
                 if (NextLevelbtn.Text == "Quit")
                 {
@@ -405,7 +405,6 @@ namespace WindowsFormsApplication7
                 return true;
             return false;
         }
-
 
     }
 }
